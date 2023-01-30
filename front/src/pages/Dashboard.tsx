@@ -1,13 +1,10 @@
-import logo from './logo.svg';
+import { Tabs } from "../components/Tabs";
 
 export const Dashboard = () => {
   return (
     <div className="dashboard">
       <header className="Dashboard-header">
-        <img src={logo} alt="logo" />
-        <p>
-          Edit <code>src/Dashboard.tsx</code> and save to reload.
-        </p>
+        <Tabs />
       </header>
     </div>
   );
