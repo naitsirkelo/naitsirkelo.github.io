@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import { FirebaseStorage } from "../../FirebaseStorage";
-import * as firebase from 'firebase/app'
-import 'firebase/firestore'
-import { getFirestore } from "firebase/firestore"
+import { readFromDoc } from "../../FirebaseStorage";
 
 export const Tab1 = () => {
   const [inputValue, setInputValue] = useState("");
@@ -11,17 +8,9 @@ export const Tab1 = () => {
     event.preventDefault();
 
     console.log(inputValue);
-    
-    const f = FirebaseStorage;
-    
-    
-  const firestore = getFirestore();
-    firebase.collection("todos").add({
-      id: uuid(),
-      item: input
-    });
 
-  };
+    readFromDoc();
+  }
 
   return (
     <div className="Tab1">

@@ -1,15 +1,19 @@
-import firebase from "firebase/app";
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: process.env.APP_API_KEY,
-  authDomain: process.env.APP_AUTHDOMAIN,
-  databaseURL: process.env.APP_DB_URL,
-  projectId: process.env.APP_PROJECT_ID,
-  storageBucket: process.env.APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.APP_MESSAGING,
-  appId: process.env.APP_ID,
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING,
+  appId: process.env.REACT_APP_ID,
+  databaseURL: process.env.REACT_APP_DB_URL,
 };
+console.log(firebaseConfig);
 
-firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
-export default firebase;
+const db = getFirestore(app);
+
+export default db;
